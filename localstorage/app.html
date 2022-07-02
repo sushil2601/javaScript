@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>TaskBox App</title>
+    </head>
+
+    <body>
+        <h1>TaskBox</h1>
+        <form onsubmit="handleSubmit(event)">
+            <input type = "text" name = "title" placeholder="Enter task title" />
+        </form>
+
+        <h2>My Tasks - 0</h2>
+        <ul>
+
+        </ul>
+
+        <script>
+            // const tasks = []
+            const tasks = JSON.parse(localStorage.getItem('task')) || []
+            const ulHandle = document.querySelector('ul')
+            const h2Handle = document.querySelector('h2')
+            const handleSubmit = (e) =>{
+                e.preventDefault()
+
+                // console.log(e.target.title.value)
+                const task = {
+                    id: Number(new Date()),
+                    title: e.target.title.value
+                }
+
+                tasks.push(task)
+                localStorage.setItem('tasks',JSON.stringify(tasks))
+                e.target.reset()
+
+                liGenerator(task)
+
+                // const liTag = document.createElement('li')
+                // liTag.textContent = task.title
+                // ulHandle.appendChild(liTag)
+                // h2Handle.textContent = `My Tasks - ${tasks.length}`
+
+                // //remove functionality
+                // liTag.addEventListener('click',() =>{
+                //     ulHandle.removeChild(liTag)
+
+                //     const index = tasks.findIndex((arrTask) =>{
+                //         return arrTask.id = task.id
+                //     })
+
+                //     tasks.splice(index,1)
+                //     h2Handle.textContent = `My Tasks - ${tasks.length}`
+                // })
+               
+            }
+            //create element
+
+            const liGenerator = (task) =>{
+                 
+                const liTag = document.createElement('li')
+                liTag.textContent = task.title
+                ulHandle.appendChild(liTag)
+                h2Handle.textContent = `My Tasks - ${tasks.length}`
+
+                // //remove functionality
+                // liTag.addEventListener('click',() =>{
+                //     ulHandle.removeChild(liTag)
+
+                //     const index = tasks.findIndex((arrTask) =>{
+                //         return arrTask.id = task.id
+                //     })
+
+                //     tasks.splice(index,1)
+                //     h2Handle.textContent = `My Tasks - ${tasks.length}`
+                // })
+                liRemove(liTag,task)
+            }
+            //remove functionality
+            const liRemove = (liTag,task) =>{
+                 
+             liTag.addEventListener('click',() =>{
+                    ulHandle.removeChild(liTag)
+
+                    const index = tasks.findIndex((arrTask) =>{
+                        return arrTask.id = task.id
+                    })
+
+                    tasks.splice(index,1)
+                    localStorage.setItem('tasks',JSON.stringify(tasks))
+                    h2Handle.textContent = `My Tasks - ${tasks.length}`
+                })
+            }
+
+           tasks.forEach((task) => {
+               liGenerator(task)
+           })
+                
+    
+
+        </script>
+    </body>
+</html>

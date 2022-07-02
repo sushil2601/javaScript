@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Update Element</title>
+    </head>
+
+    <body>
+        <h1>Social Media Links</h1>
+        <!-- <a href="http://facebook.com" target="_blank">facebook</a>
+        <a href="http://instagram.com" target="_blank">Instagram</a>
+        <a href="http://linkedin.com" target="_blank">LinkedIn</a> -->
+
+        <a href="http://facebook.com">facebook</a>
+        <a href="http://instagram.com">Instagram</a>
+        <a href="http://linkedin.com">LinkedIn</a>
+
+        <script>
+            // const elements = document.getElementsByTagName('a')
+            const elements = document.querySelectorAll('a')
+
+            for(let i = 0;i<elements.length;i++){
+                // console.log(elements)
+                elements[i].setAttribute('target','_blank')
+            }
+
+        </script>
+    </body>
+</html>

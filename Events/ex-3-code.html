@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Words and Characters counter</title>
+    </head>
+
+    <body>
+        <form onsubmit="submitForm(event)">
+            <label for = "str">Enter a string</label>
+            <input type = "text" id = "str" name = "str"/>
+
+            <input type = "submit" />
+        </form>
+
+        <h1n id = "result"></h1>
+
+        <script>
+
+            const h1Tag = document.querySelector('#result')
+
+            function submitForm(e){
+                e.preventDefault()
+                const str = e.target.str.value
+                // console.log(str)
+                const chars = str.length
+                const words = str.split(' ').length
+
+                h1Tag.textContent = `chars - ${chars} || Words - ${words}`
+            }
+        </script>
+    </body>
+</html>

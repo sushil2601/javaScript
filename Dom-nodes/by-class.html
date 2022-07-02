@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Get elements by class name</title>
+    </head>
+    <body>
+        <h1 class = 'main'>Introduction to DOM</h1>
+        <p class = 'main'>The Document Object Model, usually referred to as the DOM, is an essential part of making websites ineractive. It is an interface that allows a programming language to manipulate the content, structure, and style of a website</p>
+
+        <script>
+            // const elements = document.getElementsByClassName('main1')
+            const elements = document.getElementsByClassName('main')
+            // console.log(elements)
+            // console.log(elements[1])
+            // console.log(elements)
+            for(let i = 0; i<elements.length;i++){
+                elements[i].style.fontFamily = 'Arial'
+            }
+        </script>
+    </body>
+</html>

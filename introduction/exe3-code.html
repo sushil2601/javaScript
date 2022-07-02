@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Exercise 3 - Greet based on time
+        </title>
+    </head>
+
+    <body>
+        <h1></h1>
+        <script>
+
+            const h1Handle = document.querySelector('hi')
+            const today = new Date()
+            const hours = today.getHours()
+            let result = ''
+            if(hours>=0 && hours<=11){
+                result = 'Good Morning'
+            }else if(hours>=12 && hours<=17){
+                result = 'Good Afternoon'
+            }else if(hours >=18){
+                result = 'Good Evening'
+            }
+
+            h1Handle.textContent = result
+        </script>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Remove Element</title>
+    </head>
+
+    <body>
+        <button>remove me</button>
+
+        <script>
+            const btn = document.querySelector('button')
+            const body = document.querySelector('body')
+
+            btn.addEventListener('click',function(){
+                //Syntax
+                //parentElementNode.removeChild(elementNode)
+
+                body.removeChild(btn)
+            })
+        </script>
+    </body>
+</html>

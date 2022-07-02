@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Exercise 2 - Display Name length
+        </title>
+    </head>
+
+    <body>
+        <h1></h1>
+        <script>
+            const h1Handle = document.querySelector('h1')
+
+            const name = prompt('Enter your name').trim()
+            const srtLength = name.length
+
+            h1Handle.textContent = `${name} has ${srtLength} character.`
+        </script>
+    </body>
+</html>

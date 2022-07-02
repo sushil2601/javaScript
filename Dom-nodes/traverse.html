@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Traversing Dom Nodes</title>
+    </head>
+    <body>
+
+        <!-- <ul></ul> -->
+        <ul id="myTasks">
+            <li>understand requirement</li>
+            <li>development application</li>
+            <li>deploy application</li>
+        </ul>
+        <script>
+            // const ulTag = document.getElementById('myTasks')
+            const ulTag = document.querySelector('#myTasks') //Query selector return first element.
+            const firstTask = ulTag.firstElementChild
+            // console.log(ulTag)
+            console.log(ulTag.children)
+
+            console.log('first element',ulTag.firstElementChild)
+            console.log('last element',ulTag.lastElementChild)
+
+            console.log('second element',firstTask.nextElementSibling)
+
+            console.log(firstTask.previousElementSibling)//null
+        </script>
+    </body>
+</html>
